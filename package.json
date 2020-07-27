@@ -1,0 +1,36 @@
+{
+  "name": "200727-node-api-masterclass-devcamper",
+  "version": "1.0.0",
+  "description": "Devcamper backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lydstyl/200727-node-api-masterclass-devcamper.git"
+  },
+  "keywords": [
+    "Devcamper",
+    "backend",
+    "api",
+    "restfull",
+    "rest",
+    "node",
+    "express"
+  ],
+  "author": "Gabriel Brun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lydstyl/200727-node-api-masterclass-devcamper/issues"
+  },
+  "homepage": "https://github.com/lydstyl/200727-node-api-masterclass-devcamper#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
