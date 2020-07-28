@@ -8,7 +8,7 @@ const connectDB = async () => {
     useUnifiedTopology: true,
   }) // options not to get warnings
 
-  console.log(`MongoDB Connected: ${conn.connection.host}`)
+  console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold)
 }
 
 module.exports = connectDB
