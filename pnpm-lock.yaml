@@ -2,6 +2,7 @@ dependencies:
   colors: 1.4.0
   dotenv: 8.2.0
   express: 4.17.1
+  express-fileupload: 1.1.10
   mongoose: 5.9.25_mongoose@5.9.25
   morgan: 1.10.0
   node-geocoder: 3.27.0
@@ -206,6 +207,14 @@ packages:
       node: '>=0.6.19'
     resolution:
       integrity: sha512-S/yKGU1syOMzO86+dGpg2qGoDL0zvzcb262G+gqEy6TgP6rt6z6qxSFX/8X6vLC91P7G7C3nLs0+bvDzmvBA3Q==
+  /busboy/0.3.1:
+    dependencies:
+      dicer: 0.3.0
+    dev: false
+    engines:
+      node: '>=4.5.0'
+    resolution:
+      integrity: sha512-y7tTxhGKXcyBxRKAni+awqx8uqaJKrSFSNFSeRG5CsWNdmy2BIK+6VGWEW7TZnIO/533mtMEA4rOevQV815YJw==
   /bytes/3.1.0:
     dev: false
     engines:
@@ -425,6 +434,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
+  /dicer/0.3.0:
+    dependencies:
+      streamsearch: 0.1.2
+    dev: false
+    engines:
+      node: '>=4.5.0'
+    resolution:
+      integrity: sha512-MdceRRWqltEG2dZqO769g27N/3PXfcKl04VhYnBlo2YhH7zPi88VebsjTKclaOyiuMaGU72hTfw3VkUitGcVCA==
   /dot-prop/5.2.0:
     dependencies:
       is-obj: 2.0.0
@@ -490,6 +507,14 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-Qa4u62XvpiJorr/qg6x9eSmbCIc=
+  /express-fileupload/1.1.10:
+    dependencies:
+      busboy: 0.3.1
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    resolution:
+      integrity: sha512-VEbeJBMDl+N+I/vXjQ17Xg+R35El6l6n/EELcSSpnwQbjqFmtAfXY9p5NpBpto5FqnksIleYImJ1jNlIWlP2aw==
   /express/4.17.1:
     dependencies:
       accepts: 1.3.7
@@ -1526,6 +1551,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
+  /streamsearch/0.1.2:
+    dev: false
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-gIudDlb8Jz2Am6VzOOkpkZoanxo=
   /string-width/3.1.0:
     dependencies:
       emoji-regex: 7.0.3
@@ -1779,6 +1810,7 @@ specifiers:
   colors: ^1.4.0
   dotenv: ^8.2.0
   express: ^4.17.1
+  express-fileupload: ^1.1.10
   mongoose: ^5.9.25
   morgan: ^1.10.0
   node-geocoder: ^3.27.0
