@@ -12,6 +12,8 @@ const advancedResults = require('../middlewares/advancedResults')
 
 const router = express.Router({ mergeParams: true }) // so router.use('/:bootcampId/courses', courseRouter) in bootcamps route works
 
+const { protect } = require('../middlewares/auth')
+
 router
   .route('/')
   .get(
@@ -21,7 +23,11 @@ router
     }),
     getCourses
   )
-  .post(addCourse)
-router.route('/:id').get(getCourse).put(updateCourse).delete(deleteCourse)
+  .post(protect, addCourse)
+router
+  .route('/:id')
+  .get(getCourse)
+  .put(protect, updateCourse)
+  .delete(protect, deleteCourse)
 
 module.exports = router
