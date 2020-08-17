@@ -9,6 +9,7 @@ dependencies:
   mongoose: 5.9.25_mongoose@5.9.25
   morgan: 1.10.0
   node-geocoder: 3.27.0
+  nodemailer: 6.4.11
   slugify: 1.4.5
 devDependencies:
   nodemon: 2.0.4
@@ -1212,6 +1213,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-fNMi9smx56wFhG+2sd0qVsq5RgNlkUuQQ7UWqPwynoMb0GjxSP9joAn8wah4YDv6UzZu3b41cNmd0BglEPkC+Q==
+  /nodemailer/6.4.11:
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    requiresBuild: true
+    resolution:
+      integrity: sha512-BVZBDi+aJV4O38rxsUh164Dk1NCqgh6Cm0rQSb9SK/DHGll/DrCMnycVDD7msJgZCnmVa8ASo8EZzR7jsgTukQ==
   /nodemon/2.0.4:
     dependencies:
       chokidar: 3.4.1
@@ -1904,5 +1912,6 @@ specifiers:
   mongoose: ^5.9.25
   morgan: ^1.10.0
   node-geocoder: ^3.27.0
+  nodemailer: ^6.4.11
   nodemon: ^2.0.4
   slugify: ^1.4.5
