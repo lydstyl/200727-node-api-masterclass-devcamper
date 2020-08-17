@@ -8,10 +8,10 @@ const {
 } = require('../controllers/courses')
 
 const Course = require('../models/Course')
-const advancedResults = require('../middlewares/advancedResults')
 
 const router = express.Router({ mergeParams: true }) // so router.use('/:bootcampId/courses', courseRouter) in bootcamps route works
 
+const advancedResults = require('../middlewares/advancedResults')
 const { protect, authorize } = require('../middlewares/auth')
 
 router
