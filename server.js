@@ -6,6 +6,8 @@ const colors = require('colors')
 const fileupload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
 const mongoSanitize = require('express-mongo-sanitize')
+const helmet = require('helmet')
+const xss = require('xss-clean')
 
 const errorHandler = require('./middlewares/error')
 const connectDB = require('./config/db')
@@ -41,6 +43,12 @@ app.use(fileupload())
 
 // Sanitize data
 app.use(mongoSanitize()) // disable NoSQL Injection for ex login with email: {"gt": ""}
+
+// Set security headers
+app.use(helmet())
+
+// Prevent XSS attacks
+app.use(xss()) // ex put <script>alert(1)</script> in the title of a bootcamp
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')))
