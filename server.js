@@ -5,9 +5,14 @@ const morgan = require('morgan')
 const colors = require('colors')
 const fileupload = require('express-fileupload')
 const cookieParser = require('cookie-parser')
+
+// Security tools
 const mongoSanitize = require('express-mongo-sanitize')
 const helmet = require('helmet')
 const xss = require('xss-clean')
+const rateLimit = require('express-rate-limit')
+const hpp = require('hpp')
+const cors = require('cors')
 
 const errorHandler = require('./middlewares/error')
 const connectDB = require('./config/db')
@@ -49,6 +54,19 @@ app.use(helmet())
 
 // Prevent XSS attacks
 app.use(xss()) // ex put <script>alert(1)</script> in the title of a bootcamp
+
+// Rate limiting
+const limiter = rateLimit({
+  widowMs: 10 * 60 * 1000, // 10 minutes
+  max: 100,
+})
+app.use(limiter)
+
+// Prevent http param pollution
+app.use(hpp())
+
+// Enable Cross-origin resource sharing
+app.use(cors())
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')))
